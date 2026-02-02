@@ -7,8 +7,8 @@
 }
 
 body {
-  background-color: #1a0f3f;
-  color: #e0d9f9;
+  background-color: #1a0f3f; /* Dark purple */
+  color: #e0d9f9; /* Light lavender */
   line-height: 1.6;
   min-height: 100vh;
 }
@@ -18,20 +18,22 @@ body {
   display: flex;
   align-items: center;
   padding: 20px 60px;
-  background-color: #2d1e6a;
+  background-color: #2d1e6a; /* Dark violet */
   position: relative;
   z-index: 1000;
 }
 
-/* ===== Profile Picture (Top Left) ===== */
+/* Profile picture in navbar */
 .profile-pic {
-  width: 48px;           /* slightly bigger */
-  height: 48px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   overflow: hidden;
-  margin-right: 14px;    /* space before text */
+  margin-right: 16px;
   border: 2px solid #9b59b6;
-  box-shadow: 0 0 10px rgba(155, 89, 182, 0.6);
+  box-shadow: 0 0 12px rgba(155, 89, 182, 0.6);
+  cursor: pointer;
+  flex-shrink: 0;
 }
 
 .profile-pic img {
@@ -40,15 +42,13 @@ body {
   object-fit: cover;
 }
 
-/* ===== Logo ===== */
 .logo {
   font-weight: bold;
   color: #d7b9ff;
   font-size: 24px;
-  margin-right: auto; /* pushes nav to right */
+  margin-right: auto;
 }
 
-/* ===== Nav Links ===== */
 .navbar a {
   color: #c3b7f2;
   margin-left: 20px;
@@ -62,7 +62,7 @@ body {
   color: #d7b9ff;
 }
 
-/* ===== Hero Section ===== */
+/* ===== Hero Section (Homepage) ===== */
 .big-hero {
   min-height: 90vh;
   padding: 80px 20px 50px;
@@ -87,11 +87,12 @@ body {
 .intro-text {
   font-size: 22px;
   color: #c6b6eb;
+  line-height: 1.5;
   max-width: 650px;
   margin-bottom: 40px;
 }
 
-/* ===== Buttons ===== */
+/* Buttons */
 .buttons .btn {
   padding: 12px 25px;
   margin: 0 10px;
@@ -100,8 +101,9 @@ body {
   color: #fff;
   background: linear-gradient(45deg, #8a2be2, #9b59b6);
   font-weight: bold;
+  display: inline-block;
   box-shadow: 0 4px 15px rgba(155, 89, 182, 0.6);
-  transition: all 0.3s;
+  transition: background 0.3s, transform 0.3s;
 }
 
 .buttons .btn.outline {
@@ -112,11 +114,12 @@ body {
 }
 
 .buttons .btn:hover {
-  transform: translateY(-2px);
+  background: linear-gradient(45deg, #9b59b6, #8a2be2);
   box-shadow: 0 6px 20px rgba(138, 43, 226, 0.8);
+  transform: translateY(-3px);
 }
 
-/* ===== Skills ===== */
+/* ===== Skills Section ===== */
 .skills-section {
   max-width: 700px;
   margin: 60px auto;
@@ -153,6 +156,76 @@ body {
 .progress {
   height: 100%;
   background: linear-gradient(90deg, #8a2be2, #9b59b6);
+  border-radius: 25px 0 0 25px;
+  transition: width 1s ease-in-out;
+}
+
+/* ===== Content Section (About, Contact, Projects) ===== */
+.content-section {
+  max-width: 700px;
+  margin: 60px auto;
+  padding: 30px 25px;
+  background: linear-gradient(135deg, #2d1e6a, #3c217b);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(155, 89, 182, 0.6);
+  color: #e0d9f9;
+  line-height: 1.7;
+  font-size: 18px;
+}
+
+.content-section h1 {
+  font-size: 42px;
+  margin-bottom: 25px;
+  color: #d7b9ff;
+  text-align: center;
+  text-shadow: 0 0 10px #9b59b6;
+}
+
+.content-section p {
+  margin-bottom: 20px;
+  color: #ccc6e8;
+}
+
+.content-section a {
+  color: #d7b9ff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.content-section a:hover {
+  color: #9b59b6;
+  text-decoration: underline;
+}
+
+/* ===== Projects List Styling ===== */
+.project-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.project-list li {
+  margin-bottom: 30px;
+  background-color: #422f8a;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(155, 89, 182, 0.5);
+  transition: transform 0.3s;
+}
+
+.project-list li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(155, 89, 182, 0.8);
+}
+
+.project-list h3 {
+  margin-bottom: 10px;
+  color: #d7b9ff;
+}
+
+.project-list p {
+  color: #c4baf5;
+  font-size: 16px;
 }
 
 /* ===== Footer ===== */
@@ -164,7 +237,34 @@ footer {
   text-align: center;
 }
 
-/* ===== Mobile ===== */
+/* ===== Modal ===== */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(10, 5, 30, 0.9);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(155, 89, 182, 0.9);
+}
+
+.close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 40px;
+  color: #d7b9ff;
+  cursor: pointer;
+}
+
+/* ===== Mobile Menu Toggle ===== */
 #menu-toggle {
   display: none;
   font-size: 28px;
@@ -172,15 +272,16 @@ footer {
   color: #9b59b6;
 }
 
+/* ===== Responsive ===== */
 @media (max-width: 768px) {
   .navbar {
     padding: 15px 20px;
   }
 
   .profile-pic {
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
+    width: 48px;
+    height: 48px;
+    margin-right: 12px;
   }
 
   nav {
@@ -197,6 +298,10 @@ footer {
     display: flex;
   }
 
+  nav a {
+    margin: 15px;
+  }
+
   #menu-toggle {
     display: block;
   }
@@ -207,5 +312,10 @@ footer {
 
   .intro-text {
     font-size: 18px;
+  }
+
+  .skills-section h2,
+  .content-section h1 {
+    font-size: 28px;
   }
 }

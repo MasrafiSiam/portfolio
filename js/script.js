@@ -50,6 +50,30 @@ window.addEventListener("load", () => {
 });
 
 // ===============================
+// Modal Popup for Profile Picture
+// ===============================
+const modal = document.getElementById("imageModal");
+const openModalBtn = document.getElementById("openModal");
+const closeModalBtn = document.getElementById("closeModal");
+
+if (openModalBtn && modal && closeModalBtn) {
+  openModalBtn.addEventListener("click", () => {
+    modal.style.display = "flex";
+  });
+
+  closeModalBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  // Close modal if user clicks outside the image
+  window.addEventListener("click", (event) => {
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+}
+
+// ===============================
 // Console Signature (Optional Flex 😎)
 // ===============================
 console.log(
