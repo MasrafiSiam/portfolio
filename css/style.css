@@ -1,0 +1,354 @@
+/* ===== Global Styles ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #1a0f3f; /* Dark purple */
+  color: #e0d9f9; /* Light lavender text */
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background-color: #2d1e6a; /* Dark violet */
+  position: relative;
+  z-index: 1000;
+}
+
+.navbar a {
+  color: #c3b7f2; /* Soft purple */
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  color: #d7b9ff; /* Bright violet */
+}
+
+.logo {
+  font-weight: bold;
+  color: #d7b9ff;
+  font-size: 24px;
+}
+
+/* ===== Hero Section (Home page) ===== */
+.big-hero {
+  min-height: 90vh;
+  padding: 80px 20px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(135deg, #1a0f3f 0%, #3c217b 100%);
+}
+
+.big-hero h1 {
+  font-size: 60px;
+  margin-bottom: 15px;
+  color: #e6dbff;
+}
+
+.big-hero span {
+  color: #9b59b6; /* Vibrant violet */
+}
+
+.intro-text {
+  font-size: 22px;
+  color: #c6b6eb;
+  line-height: 1.5;
+  max-width: 650px;
+  margin-bottom: 40px;
+}
+
+/* Buttons */
+.buttons .btn {
+  padding: 12px 25px;
+  margin: 0 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(45deg, #8a2be2, #9b59b6);
+  font-weight: bold;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(155, 89, 182, 0.6);
+  transition: background 0.3s;
+}
+
+.buttons .btn.outline {
+  background: none;
+  color: #9b59b6;
+  border: 2px solid #9b59b6;
+  box-shadow: none;
+}
+
+.buttons .btn:hover {
+  background: linear-gradient(45deg, #9b59b6, #8a2be2);
+  box-shadow: 0 6px 20px rgba(138, 43, 226, 0.8);
+}
+
+/* ===== Skills Section (Home) ===== */
+.skills-section {
+  max-width: 700px;
+  margin: 60px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.skills-section h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+  color: #9b59b6;
+}
+
+.skill {
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+.skill label {
+  font-weight: 600;
+  font-size: 18px;
+  color: #e6dbff;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.progress-bar {
+  background-color: #3c217b;
+  border-radius: 25px;
+  overflow: hidden;
+  height: 20px;
+}
+
+.progress {
+  height: 100%;
+  background: linear-gradient(90deg, #8a2be2, #9b59b6);
+  border-radius: 25px 0 0 25px;
+  transition: width 1s ease-in-out;
+}
+
+/* ===== Recent Projects (Home) ===== */
+.recent-projects {
+  max-width: 700px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.recent-projects h2 {
+  font-size: 36px;
+  margin-bottom: 25px;
+  text-align: center;
+  color: #9b59b6;
+}
+
+.recent-projects ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.recent-projects li {
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #c6b6eb;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.recent-projects a {
+  color: #d7b9ff;
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 6px;
+}
+
+.recent-projects a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Call to Action Section (Home) ===== */
+.cta-section {
+  text-align: center;
+  margin: 70px 0 100px;
+}
+
+.cta-section h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #9b59b6;
+}
+
+.big-btn {
+  padding: 15px 50px;
+  font-size: 22px;
+  border-radius: 8px;
+  background: linear-gradient(45deg, #9b59b6, #8a2be2);
+  color: #fff;
+  font-weight: bold;
+  box-shadow: 0 6px 18px rgba(155, 89, 182, 0.8);
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.big-btn:hover {
+  background: linear-gradient(45deg, #8a2be2, #9b59b6);
+}
+
+/* ===== Content Sections (About, Projects, Contact) ===== */
+.content-section {
+  max-width: 700px;
+  margin: 60px auto;
+  padding: 30px 25px;
+  background: linear-gradient(135deg, #2d1e6a, #3c217b);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(155, 89, 182, 0.6);
+  color: #e0d9f9;
+  line-height: 1.7;
+  font-size: 18px;
+}
+
+.content-section h1 {
+  font-size: 42px;
+  margin-bottom: 25px;
+  color: #d7b9ff;
+  text-align: center;
+  text-shadow: 0 0 10px #9b59b6;
+}
+
+.content-section p {
+  margin-bottom: 20px;
+  color: #ccc6e8;
+}
+
+.content-section a {
+  color: #d7b9ff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.content-section a:hover {
+  color: #9b59b6;
+  text-decoration: underline;
+}
+
+/* ===== Projects Page List Styling ===== */
+.project-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.project-list li {
+  margin-bottom: 30px;
+  background-color: #422f8a;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(155, 89, 182, 0.5);
+  transition: transform 0.3s;
+}
+
+.project-list li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(155, 89, 182, 0.8);
+}
+
+.project-list h3 {
+  margin-bottom: 10px;
+  color: #d7b9ff;
+}
+
+.project-list p {
+  color: #c4baf5;
+  font-size: 16px;
+}
+
+/* ===== Footer ===== */
+footer {
+  background-color: #2d1e6a;
+  padding: 20px;
+  color: #a899c7;
+  font-size: 14px;
+  text-align: center;
+  box-shadow: inset 0 1px 10px #3c217b;
+}
+
+/* ===== Active Nav Link Styling ===== */
+nav a.active {
+  color: #d7b9ff;
+  font-weight: bold;
+}
+
+/* ===== Mobile Menu Toggle ===== */
+#menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #9b59b6;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 15px 20px;
+  }
+  nav {
+    display: none;
+    flex-direction: column;
+    background-color: #2d1e6a;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 160px;
+    border-radius: 0 0 0 10px;
+  }
+  nav.show {
+    display: flex;
+  }
+  nav a {
+    margin: 15px;
+  }
+  #menu-toggle {
+    display: block;
+  }
+  .big-hero h1 {
+    font-size: 38px;
+  }
+  .intro-text {
+    font-size: 18px;
+    max-width: 90%;
+  }
+  .skills-section h2,
+  .recent-projects h2,
+  .cta-section h2 {
+    font-size: 28px;
+  }
+  .big-btn {
+    font-size: 18px;
+    padding: 12px 30px;
+  }
+  .content-section {
+    margin: 40px 15px;
+    font-size: 16px;
+    padding: 15px;
+  }
+  .project-list li {
+    padding: 15px;
+  }
+  .content-section h1 {
+    font-size: 32px;
+  }
+}
